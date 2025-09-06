@@ -1,18 +1,62 @@
-@import "./sass/vendors/bootstrap.scss";
+:root { --brand:#6C5CE7; --text:CanvasText; --bg:Canvas; }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin:0; font:16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, sans-serif; color:var(--text); background:var(--bg); }
+a { color: inherit; text-decoration:none; }
+img { max-width:100%; height:auto; display:block; }
 
-@import "./sass/abstracts/mixins";
-@import "./sass/abstracts/variables";
-@import "./sass/abstracts/helpers";
+.container { max-width:1100px; margin-inline:auto; padding-inline:16px; }
+.section { padding:80px 0; scroll-margin-top:80px; }
+.grid { display:grid; gap:16px; }
+.grid-2 { grid-template-columns:1fr; gap:24px; }
+@media (min-width:820px){ .grid-2{ grid-template-columns:1.2fr 0.8fr; } }
+.grid--3 { grid-template-columns:1fr; }
+@media (min-width:700px){ .grid--3{ grid-template-columns:repeat(3,1fr); } }
 
-@import "./sass/base/base";
-@import "./sass/base/typography";
+.brand-color { color:var(--brand); }
+.muted { opacity:.75; }
+.btn { display:inline-block; padding:10px 14px; border:1px solid color-mix(in oklab, var(--text) 20%, transparent); border-radius:12px; background:transparent; }
+.btn--primary { background:var(--brand); color:white; border-color:var(--brand); cursor:pointer; }
+:focus-visible { outline:3px solid var(--brand); outline-offset:2px; }
+.skip-link { position:absolute; left:-999px; top:auto; }
+.skip-link:focus { left:12px; top:12px; background:var(--bg); padding:.5rem 1rem; border-radius:8px; z-index:999; }
 
-@import "./sass/components/buttons";
+/* Header / Nav */
+header { position:fixed; inset:0 0 auto; z-index:50; transform:translateY(0); transition:transform .22s ease; }
+header.is-hidden { transform:translateY(-100%); }
+.nav { backdrop-filter:blur(10px); background:color-mix(in oklab, var(--bg) 70%, black 5%); border-bottom:1px solid color-mix(in oklab, var(--text) 15%, transparent); }
+.nav__inner { display:flex; align-items:center; justify-content:space-between; padding-block:10px; }
+.nav__list { display:flex; align-items:center; gap:8px; margin:0; padding:0; list-style:none; }
+.nav a[aria-current="true"] { background:color-mix(in oklab, var(--brand) 18%, transparent); border-radius:10px; padding:8px 12px; }
+.brand { border-radius:10px; padding:8px 12px; border:1px solid color-mix(in oklab, var(--text) 20%, transparent); font-weight:700; }
 
-@import "./sass/layout/footer";
-@import "./sass/layout/sections";
+/* Hero visual */
+.hero__visual { aspect-ratio:1/1; border-radius:20px; border:1px solid color-mix(in oklab, var(--text) 15%, transparent);
+  background:radial-gradient(1200px 800px at 15% 20%, #6C5CE740, transparent),
+             radial-gradient(900px 700px at 85% 70%, #0ea5e950, transparent);
+}
 
-@import "./sass/sections/about";
-@import "./sass/sections/contact";
-@import "./sass/sections/hero";
-@import "./sass/sections/projects";
+/* Cards */
+.card { border:1px solid color-mix(in oklab, var(--text) 15%, transparent); border-radius:16px; padding:16px; transition:box-shadow .2s ease, transform .2s ease; background:transparent; }
+.card:hover { box-shadow:0 8px 24px rgb(0 0 0 / .1); transform:translateY(-2px); }
+.tags { display:flex; gap:6px; flex-wrap:wrap; margin-top:8px; }
+.tags span { padding:2px 8px; font-size:12px; border:1px solid color-mix(in oklab, var(--text) 20%, transparent); border-radius:999px; }
+
+/* Timeline */
+.timeline { position:relative; margin-top:12px; padding-left:18px; border-left:2px solid color-mix(in oklab, var(--text) 20%, transparent); }
+.timeline li { margin-bottom:18px; }
+.timeline li::before { content:""; position:absolute; left:-7px; width:12px; height:12px; border-radius:9999px; background:var(--brand); transform:translateY(6px); }
+
+/* Contact */
+.contact input, .contact textarea { display:block; width:100%; padding:10px 12px; border-radius:12px; border:1px solid #ccc; margin-top:6px; background:transparent; color:inherit; }
+
+/* Footer */
+.footer { padding:48px 0; opacity:.75; }
+
+/* Dark mode */
+@media (prefers-color-scheme:dark){
+  :root { --bg:#0b0b0c; --text:#f3f3f3; }
+  .nav { background:#0b0b0c80; }
+  .card { border-color:#ffffff22; }
+  .btn { border-color:#ffffff2a; }
+}
