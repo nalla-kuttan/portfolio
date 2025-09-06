@@ -1,365 +1,113 @@
-<!DOCTYPE html>
-<html lang="en" class="sr">
+<!doctype html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="shortcut icon" type="image/png" href="assets/favicon.png" />
-
-    <title>Ruban Manoj | Developer</title>
-    <meta name="keywords" content="nalla_kuttan, Ruban Manoj, skill" />
-    <meta name="description" content="Ruban Manoj | Web Developer" />
-
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-    <link rel="stylesheet" href="styles.scss" />
-    <script
-      defer
-      src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"
-    ></script>
-
+    <title>Ruban Manoj — Portfolio</title>
+    <meta name="description" content="Full-stack engineer building fast, accessible web apps." />
+    <meta property="og:title" content="Ruban Manoj — Portfolio" />
+    <meta property="og:description" content="Projects, experience, and contact." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="./assets/og.png" />
+    <link rel="canonical" href="https://nalla-kuttan.github.io/portfolio/" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
   <body>
-    <div id="top"></div>
+    <a href="#main" class="skip-link">Skip to content</a>
 
-    <!-- **** Hero Section **** -->
-    <section id="hero" class="jumbotron">
-      <div class="container">
-        <h1 class="hero-title load-hidden">
-          Hi, my name is <span class="text-color-main">Ruban Manoj</span>
-          <br />
-          I am an Aspiring Developer.
-        </h1>
-        <p class="hero-cta load-hidden">
-          <a rel="noreferrer" class="cta-btn cta-btn--hero" href="#about"
-            >Know more</a
-          >
-        </p>
-      </div>
-    </section>
-    <!-- /END Hero Section -->
-
-    <!-- **** About Section **** -->
-    <section id="about">
-      <div class="container">
-        <h2 class="section-title load-hidden">About me</h2>
-        <div class="row about-wrapper">
-          <div class="col-md-6 col-sm-12">
-            <div class="about-wrapper__image load-hidden">
-              <img
-                alt="Profile Image"
-                class="img-fluid rounded shadow-lg"
-                height="auto"
-                width="600px"
-                src="assets/profile.jpeg"
-                alt="Profile Image"
-              />
-            </div>
-          </div>
-          <div class="col-md-6 col-sm-12">
-            <div class="about-wrapper__info load-hidden">
-              <p class="about-wrapper__info-text">
-                Heyy! I’m Ruban, a recent graduate enthusiastic about creating polished, user-friendly websites. 
-                Armed with an Advanced Diploma in Computer Programming and Analysis, I’m diving into the exciting realm of
-                 web development, eager to turn concepts into pixel-perfect reality. 
-              </p>
-              <p class="about-wrapper__info-text">
-                Proficient in HTML, CSS, and JavaScript, I’m constantly honing my skills and embracing new challenges with a spirit of curiosity. I thrive on crafting intuitive 
-                interfaces that blend form with function, aiming to make the web a more delightful place one line of code at a time
-              </p>
-              <p class="about-wrapper__info-text">
-                Beyond coding, I’m a fervent football enthusiast (not the American kind), or lost in a good fantasy book, immersed in epic video game quests, or 
-                binge-watching the latest TV series. Because in a world where technology meets creativity, there’s
-                always room for a dash of humor and the next thrilling episode. Let’s connect and craft something extraordinary together!
-              </p>
-              <span class="d-flex mt-3">
-                <a
-                  rel="noreferrer"
-                  target="_blank"
-                  class="cta-btn cta-btn--resume"
-                  href="assets/resumer.pdf"
-                >
-                  View Resume
-                </a>
-              </span>
-            </div>
-          </div>
+    <header role="banner">
+      <nav class="nav" aria-label="Primary">
+        <div class="container nav__inner">
+          <a class="brand" href="#home" aria-label="Go to home">R.</a>
+          <ul class="nav__list">
+            <li><a href="#home" data-link>Home</a></li>
+            <li><a href="#projects" data-link>Projects</a></li>
+            <li><a href="#experience" data-link>Experience</a></li>
+            <li><a href="#contact" data-link>Contact</a></li>
+            <li><a class="btn btn--primary" href="./resume.pdf" target="_blank" rel="noreferrer">Resume</a></li>
+          </ul>
         </div>
-      </div>
-    </section>
-    <!-- /END About Section -->
+      </nav>
+    </header>
 
-    <!-- **** Projects Section **** -->
-    <section id="projects">
-      <div class="container">
-        <div class="project-wrapper">
-          <h2 class="section-title dark-blue-text">Projects</h2>
-
-          <div class="row">
-            <div class="col-lg-4 col-sm-12">
-              <div class="project-wrapper__text load-hidden">
-                <h3 class="project-wrapper__text-title">Carpool Web App</h3>
-                <div>
-                  <p class="mb-4">
-                    The app has a login page for students and staff to track activity,
-                     advanced search filters by hobbies, schedules, and majors, and 
-                     options to post or request trips. The “Rides” module shows ride 
-                     details and costs. Users can manage accounts, request refunds, 
-                     and rate companions. Notifications give ETA and driver info. 
-                     Admins handle verifications, policies, and user privileges.
-                  </p>
-                </div>
-                <a
-                  rel="noreferrer"
-                  target="_blank"
-                  class="cta-btn cta-btn--hero"
-                  href="https://www.youtube.com/watch?v=HMsF1qp5YCs"
-                >
-                  See Demo
-                </a>
-                <a
-                  rel="noreferrer"
-                  target="_blank"
-                  class="cta-btn text-color-main"
-                  href="https://github.com/nalla-kuttan/Carpooling-App"
-                >
-                  Source Code
-                </a>
-              </div>
-            </div>
-            <div class="col-lg-8 col-sm-12">
-              <div class="project-wrapper__image load-hidden">
-                <a rel="noreferrer" href="#!" target="_blank">
-                  <div
-                    data-tilt
-                    data-tilt-max="4"
-                    data-tilt-glare="true"
-                    data-tilt-max-glare="0.5"
-                    class="thumbnail rounded js-tilt"
-                  >
-                    <img
-                      alt="Project Image"
-                      class="img-fluid"
-                      src="assets/carpool.png"
-                    />
-                  </div>
-                </a>
-              </div>
+    <main id="main" role="main">
+      <!-- Hero -->
+      <section id="home" class="section hero" aria-labelledby="home-title">
+        <div class="container grid-2">
+          <div>
+            <h1 id="home-title">Hey, I’m <span class="brand-color">Ruban</span> — I build fast, accessible web apps.</h1>
+            <p class="muted">Full-stack developer focused on clean UX, performance, and robust DX.</p>
+            <div class="buttons">
+              <a class="btn btn--primary" href="#projects">View Projects</a>
+              <a class="btn" href="#contact">Contact</a>
             </div>
           </div>
-          <!-- /END Project -->
-
-          <div class="row">
-            <div class="col-lg-4 col-sm-12">
-              <div class="project-wrapper__text load-hidden">
-                <h3 class="project-wrapper__text-title">Fragments Microservice</h3>
-                <div>
-                  <p class="mb-4">
-                    Fragments Microservice will handle small text and image fragments. 
-                    It supports multiple formats (text, JSON, images) from various sources 
-                    like IoT devices and mobile apps. The service will connect seamlessly 
-                    with existing systems, using HTTP REST API for CRUD operations, format 
-                    conversions, and secure data storage. It requires GitHub integration 
-                    for automatic building, testing, and AWS deployment. The system must 
-                    scale to handle large data volumes and ensure proper authorization for data isolation.
-                  </p>
-                </div>
-                <a
-                  rel="noreferrer"
-                  target="_blank"
-                  class="cta-btn cta-btn--hero"
-                  href="https://github.com/nalla-kuttan/fragments-ui"
-                >
-                  Front-End Code
-                </a>
-                <a
-                  rel="noreferrer"
-                  target="_blank"
-                  class="cta-btn text-color-main"
-                  href="https://github.com/nalla-kuttan/fragments"
-                >
-                  Back-End Code
-                </a>
-              </div>
-            </div>
-            <div class="col-lg-8 col-sm-12">
-              <div class="project-wrapper__image load-hidden">
-                <a rel="noreferrer" href="#!" target="_blank">
-                  <div
-                    data-tilt
-                    data-tilt-max="4"
-                    data-tilt-glare="true"
-                    data-tilt-max-glare="0.5"
-                    class="thumbnail rounded js-tilt"
-                  >
-                    <img
-                      alt="Project Image"
-                      class="img-fluid"
-                      src="assets/aws.png"
-                    />
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div>
-          <!-- /END Project -->
-
-          <div class="row">
-            <div class="col-lg-4 col-sm-12">
-              <div class="project-wrapper__text load-hidden">
-                <h3 class="project-wrapper__text-title">Sound Kit</h3>
-                <div>
-                  <p class="mb-4">
-                    A web app where each button plays a different sound. 
-                    Choose between Guitar and Drum kits. Click a button 
-                    to hear chords, riffs, or drum beats, creating your 
-                    own music easily and interactively. Perfect for 
-                    musicians and enthusiasts alike.
-                  </p>
-                </div>
-                <a
-                  rel="noreferrer"
-                  target="_blank"
-                  class="cta-btn cta-btn--hero"
-                  href="https://nalla-kuttan.github.io/SoundKit/"
-                >
-                  See Live
-                </a>
-                <a
-                  rel="noreferrer"
-                  target="_blank"
-                  class="cta-btn text-color-main"
-                  href="https://github.com/nalla-kuttan/SoundKit"
-                >
-                  Source Code
-                </a>
-              </div>
-            </div>
-            <div class="col-lg-8 col-sm-12">
-              <div class="project-wrapper__image load-hidden">
-                <a rel="noreferrer" href="#!" target="_blank">
-                  <div
-                    data-tilt
-                    data-tilt-max="4"
-                    data-tilt-glare="true"
-                    data-tilt-max-glare="0.5"
-                    class="thumbnail rounded js-tilt"
-                  >
-                    <img
-                      alt="Project Image"
-                      class="img-fluid"
-                      src="assets/sound.png"
-                    />
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div>
-          <!-- /END Project -->
-
-          <div class="row">
-            <div class="col-lg-4 col-sm-12">
-              <div class="project-wrapper__text load-hidden">
-                <h3 class="project-wrapper__text-title">Dice Game</h3>
-                <div>
-                  <p class="mb-4">
-                    A web app that simulates a dice throw, randomizing each 
-                    roll to determine the winner. Players can roll virtual 
-                    dice and instantly see results, making it easy to play 
-                    and decide winners in any game. Simple, fun, and interactive for all users.
-                  </p>
-                </div>
-                <a
-                  rel="noreferrer"
-                  target="_blank"
-                  class="cta-btn cta-btn--hero"
-                  href="https://nalla-kuttan.github.io/DiceGame/"
-                >
-                  See Live
-                </a>
-                <a
-                  rel="noreferrer"
-                  target="_blank"
-                  class="cta-btn text-color-main"
-                  href="https://github.com/nalla-kuttan/DiceGame"
-                >
-                  Source Code
-                </a>
-              </div>
-            </div>
-            <div class="col-lg-8 col-sm-12">
-              <div class="project-wrapper__image load-hidden">
-                <a rel="noreferrer" href="#!" target="_blank">
-                  <div
-                    data-tilt
-                    data-tilt-max="4"
-                    data-tilt-glare="true"
-                    data-tilt-max-glare="0.5"
-                    class="thumbnail rounded js-tilt"
-                  >
-                    <img
-                      alt="Project Image"
-                      class="img-fluid"
-                      src="assets/dice.png"
-                    />
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div>
-          <!-- /END Project -->
+          <div class="hero__visual" role="img" aria-label="Decorative gradient"></div>
         </div>
-      </div>
-    </section>
-    <!-- /END Projects Section -->
+      </section>
 
-    <!-- **** Contact Section **** -->
-    <section id="contact">
-      <div class="container">
-        <h2 class="section-title">Contact</h2>
-        <div class="contact-wrapper load-hidden">
-          <p class="contact-wrapper__text">Let’s Talk</p>
-          <a
-            rel="noreferrer"
-            target="_blank"
-            class="cta-btn cta-btn--resume"
-            href="mailto:rubanpmanoj@gmail.com"
-            >Email</a
-          >
+      <!-- Projects -->
+      <section id="projects" class="section" aria-labelledby="projects-title">
+        <div class="container">
+          <h2 id="projects-title">Projects</h2>
+          <div class="filters" role="tablist" aria-label="Project categories">
+            <button class="btn active" data-filter="All" role="tab" aria-selected="true">All</button>
+            <button class="btn" data-filter="Web" role="tab">Web</button>
+            <button class="btn" data-filter="Backend" role="tab">Backend</button>
+            <button class="btn" data-filter="ML" role="tab">ML</button>
+          </div>
+          <div id="project-grid" class="grid grid--3" data-grid></div>
         </div>
-      </div>
-    </section>
-    <!-- /END Contact Section -->
+      </section>
 
-    <!-- **** Footer Section **** -->
-    <footer class="footer navbar-static-bottom">
-      <div class="container">
-        <a rel="noreferrer" href="#top" class="back-to-top">
-          <i class="fa fa-angle-up fa-2x" aria-hidden="true"></i>
-        </a>
-        <div class="social-links">
-          <a rel="noreferrer" href="https://linkedin.com/in/rubanpmanoj" target="_blank">
-            <i class="fa fa-linkedin fa-inverse"></i>
-          </a>
-          <a rel="noreferrer" href="https://github.com/nalla-kuttan" target="_blank">
-            <i class="fa fa-github fa-inverse"></i>
-          </a>
+      <!-- Experience -->
+      <section id="experience" class="section" aria-labelledby="exp-title">
+        <div class="container">
+          <h2 id="exp-title">Experience</h2>
+          <ol class="timeline">
+            <li>
+              <strong>Engineer · Novo Nordisk Engineering</strong>
+              <div class="muted">2024—Present</div>
+              <ul>
+                <li>Author URS & commissioning docs for pharma equipment</li>
+                <li>Automate/validate PLC–HMI process controls</li>
+              </ul>
+            </li>
+          </ol>
         </div>
+      </section>
 
-        <hr />
+      <!-- Contact -->
+      <section id="contact" class="section" aria-labelledby="contact-title">
+        <div class="container">
+          <h2 id="contact-title">Contact</h2>
+          <form action="https://formspree.io/f/your-id" method="POST" aria-describedby="contact-help" class="contact">
+            <p id="contact-help" class="muted">I’ll reply within 24–48 hours.</p>
+            <label>Email
+              <input name="email" type="email" required autocomplete="email" />
+            </label>
+            <label>Message
+              <textarea name="message" rows="5" required></textarea>
+            </label>
+            <button class="btn btn--primary">Send</button>
+            <span id="sent" class="muted" hidden>Thanks! Sent.</span>
+          </form>
+        </div>
+      </section>
+    </main>
 
-        <p class="footer__text">
-          © 2024 - 
-          <a rel="noreferrer" href="https://github.com/nalla_kuttan" target="_blank"
-            >Ruban Manoj</a
-          >
-        </p>
-
+    <footer class="footer" role="contentinfo">
+      <div class="container">
+        © <span data-year></span> Ruban Manoj ·
+        <a class="btn" href="https://github.com/nalla-kuttan" target="_blank" rel="noreferrer">GitHub</a>
       </div>
     </footer>
-    <!-- /END Footer Section -->
 
-    <script defer type="module" src="index.js"></script>
+    <!-- Scripts -->
+    <script src="./data/scrollRevealConfig.js" defer></script>
+    <script src="./scripts/tiltAnimation.js" defer></script>
+    <script src="./scripts/scrollReveal.js" defer></script>
+    <script src="./data/projects.js" defer></script>
+    <script src="./index.js" defer></script>
   </body>
 </html>
