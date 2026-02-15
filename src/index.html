@@ -1,113 +1,113 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Ruban Manoj — Portfolio</title>
-    <meta name="description" content="Full-stack engineer building fast, accessible web apps." />
-    <meta property="og:title" content="Ruban Manoj — Portfolio" />
-    <meta property="og:description" content="Projects, experience, and contact." />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="./assets/og.png" />
-    <link rel="canonical" href="https://nalla-kuttan.github.io/portfolio/" />
-    <link rel="stylesheet" href="./styles.css" />
-  </head>
-  <body>
-    <a href="#main" class="skip-link">Skip to content</a>
 
-    <header role="banner">
-      <nav class="nav" aria-label="Primary">
-        <div class="container nav__inner">
-          <a class="brand" href="#home" aria-label="Go to home">R.</a>
-          <ul class="nav__list">
-            <li><a href="#home" data-link>Home</a></li>
-            <li><a href="#projects" data-link>Projects</a></li>
-            <li><a href="#experience" data-link>Experience</a></li>
-            <li><a href="#contact" data-link>Contact</a></li>
-            <li><a class="btn btn--primary" href="./resume.pdf" target="_blank" rel="noreferrer">Resume</a></li>
-          </ul>
-        </div>
-      </nav>
-    </header>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ruban Manoj — Portfolio</title>
+  <meta name="description" content="Full-stack engineer building fast, accessible web apps." />
+  <meta property="og:title" content="Ruban Manoj — Portfolio" />
+  <meta property="og:description" content="Projects, experience, and contact." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="./assets/profile.jpeg" />
+  <link rel="canonical" href="https://nalla-kuttan.github.io/portfolio/" />
+  <link rel="stylesheet" href="./styles.scss" />
+</head>
 
-    <main id="main" role="main">
-      <!-- Hero -->
-      <section id="home" class="section hero" aria-labelledby="home-title">
-        <div class="container grid-2">
-          <div>
-            <h1 id="home-title">Hey, I’m <span class="brand-color">Ruban</span> — I build fast, accessible web apps.</h1>
-            <p class="muted">Full-stack developer focused on clean UX, performance, and robust DX.</p>
-            <div class="buttons">
-              <a class="btn btn--primary" href="#projects">View Projects</a>
-              <a class="btn" href="#contact">Contact</a>
-            </div>
-          </div>
-          <div class="hero__visual" role="img" aria-label="Decorative gradient"></div>
-        </div>
-      </section>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
 
-      <!-- Projects -->
-      <section id="projects" class="section" aria-labelledby="projects-title">
-        <div class="container">
-          <h2 id="projects-title">Projects</h2>
-          <div class="filters" role="tablist" aria-label="Project categories">
-            <button class="btn active" data-filter="All" role="tab" aria-selected="true">All</button>
-            <button class="btn" data-filter="Web" role="tab">Web</button>
-            <button class="btn" data-filter="Backend" role="tab">Backend</button>
-            <button class="btn" data-filter="ML" role="tab">ML</button>
-          </div>
-          <div id="project-grid" class="grid grid--3" data-grid></div>
-        </div>
-      </section>
-
-      <!-- Experience -->
-      <section id="experience" class="section" aria-labelledby="exp-title">
-        <div class="container">
-          <h2 id="exp-title">Experience</h2>
-          <ol class="timeline">
-            <li>
-              <strong>Engineer · Novo Nordisk Engineering</strong>
-              <div class="muted">2024—Present</div>
-              <ul>
-                <li>Author URS & commissioning docs for pharma equipment</li>
-                <li>Automate/validate PLC–HMI process controls</li>
-              </ul>
-            </li>
-          </ol>
-        </div>
-      </section>
-
-      <!-- Contact -->
-      <section id="contact" class="section" aria-labelledby="contact-title">
-        <div class="container">
-          <h2 id="contact-title">Contact</h2>
-          <form action="https://formspree.io/f/your-id" method="POST" aria-describedby="contact-help" class="contact">
-            <p id="contact-help" class="muted">I’ll reply within 24–48 hours.</p>
-            <label>Email
-              <input name="email" type="email" required autocomplete="email" />
-            </label>
-            <label>Message
-              <textarea name="message" rows="5" required></textarea>
-            </label>
-            <button class="btn btn--primary">Send</button>
-            <span id="sent" class="muted" hidden>Thanks! Sent.</span>
-          </form>
-        </div>
-      </section>
-    </main>
-
-    <footer class="footer" role="contentinfo">
-      <div class="container">
-        © <span data-year></span> Ruban Manoj ·
-        <a class="btn" href="https://github.com/nalla-kuttan" target="_blank" rel="noreferrer">GitHub</a>
+  <header role="banner">
+    <nav class="nav" aria-label="Primary">
+      <div class="container nav__inner">
+        <a class="brand" href="#home" aria-label="Go to home">R.</a>
+        <ul class="nav__list">
+          <li><a href="#home" data-link>Home</a></li>
+          <li><a href="#projects" data-link>Projects</a></li>
+          <li><a href="#experience" data-link>Experience</a></li>
+          <li><a href="#contact" data-link>Contact</a></li>
+          <li><a class="btn btn--primary" href="./assets/resume.pdf" target="_blank" rel="noreferrer">Resume</a></li>
+        </ul>
       </div>
-    </footer>
+    </nav>
+  </header>
 
-    <!-- Scripts -->
-    <script src="./data/scrollRevealConfig.js" defer></script>
-    <script src="./scripts/tiltAnimation.js" defer></script>
-    <script src="./scripts/scrollReveal.js" defer></script>
-    <script src="./data/projects.js" defer></script>
-    <script src="./index.js" defer></script>
-  </body>
+  <main id="main" role="main">
+    <!-- Hero -->
+    <section id="home" class="section hero" aria-labelledby="home-title">
+      <div class="container grid-2">
+        <div>
+          <h1 id="home-title">Hey, I’m <span class="brand-color">Ruban</span> — I build fast, accessible web apps.</h1>
+          <p class="muted">Full-stack developer focused on clean UX, performance, and robust DX.</p>
+          <div class="buttons">
+            <a class="btn btn--primary" href="#projects">View Projects</a>
+            <a class="btn" href="#contact">Contact</a>
+          </div>
+        </div>
+        <div class="hero__visual" role="img" aria-label="Decorative gradient"></div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="section" aria-labelledby="projects-title">
+      <div class="container">
+        <h2 id="projects-title">Projects</h2>
+        <div class="filters" role="tablist" aria-label="Project categories">
+          <button class="btn active" data-filter="All" role="tab" aria-selected="true">All</button>
+          <button class="btn" data-filter="Web" role="tab">Web</button>
+          <button class="btn" data-filter="Backend" role="tab">Backend</button>
+          <button class="btn" data-filter="ML" role="tab">ML</button>
+        </div>
+        <div id="project-grid" class="grid grid--3" data-grid></div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience" class="section" aria-labelledby="exp-title">
+      <div class="container">
+        <h2 id="exp-title">Experience</h2>
+        <ol class="timeline">
+          <li>
+            <strong>Engineer · Novo Nordisk Engineering</strong>
+            <div class="muted">2024—Present</div>
+            <ul>
+              <li>Author URS & commissioning docs for pharma equipment</li>
+              <li>Automate/validate PLC–HMI process controls</li>
+            </ul>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section" aria-labelledby="contact-title">
+      <div class="container">
+        <h2 id="contact-title">Contact</h2>
+        <form action="https://formspree.io/f/your-id" method="POST" aria-describedby="contact-help" class="contact">
+          <p id="contact-help" class="muted">I’ll reply within 24–48 hours.</p>
+          <label>Email
+            <input name="email" type="email" required autocomplete="email" />
+          </label>
+          <label>Message
+            <textarea name="message" rows="5" required></textarea>
+          </label>
+          <button class="btn btn--primary">Send</button>
+          <span id="sent" class="muted" hidden>Thanks! Sent.</span>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      © <span data-year></span> Ruban Manoj ·
+      <a class="btn" href="https://github.com/nalla-kuttan" target="_blank" rel="noreferrer">GitHub</a>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="./data/projects.js" defer></script>
+  <script type="module" src="./index.js" defer></script>
+</body>
+
 </html>

@@ -1,3 +1,7 @@
+import initScrollReveal from "./scripts/scrollReveal";
+import initTiltAnimation from "./scripts/tiltAnimation";
+import { targetElements, defaultProps } from "./data/scrollRevealConfig";
+
 // Sticky header hide/show
 const header = document.querySelector("header");
 let lastY = 0;
@@ -10,7 +14,7 @@ window.addEventListener("scroll", () => {
 // Active link highlighting
 const navLinks = document.querySelectorAll("nav a[href^='#']");
 const sections = Array.from(document.querySelectorAll("section[id]"));
-function setActive(hash){
+function setActive(hash) {
   navLinks.forEach(a => a.setAttribute("aria-current", a.getAttribute("href") === hash ? "true" : "false"));
 }
 const io = new IntersectionObserver((entries) => {
@@ -27,13 +31,13 @@ const GRID = document.querySelector("#project-grid");
 const filters = document.querySelectorAll(".filters [data-filter]");
 const all = (window.__PROJECTS__ || []);
 
-function render(list){
+function render(list) {
   if (!GRID) return;
   GRID.innerHTML = list.map((p, i) => `
-    <a class="card" href="${p.url}" target="_blank" rel="noreferrer" style="transition-delay:${i*30}ms">
+    <a class="card" href="${p.url}" target="_blank" rel="noreferrer" style="transition-delay:${i * 30}ms">
       <strong>${p.name}</strong>
       <p class="muted" style="margin-top:8px">${p.desc}</p>
-      <div class="tags">${p.tags.map(t=>`<span>${t}</span>`).join("")}</div>
+      <div class="tags">${p.tags.map(t => `<span>${t}</span>`).join("")}</div>
     </a>
   `).join("");
 }
@@ -62,3 +66,7 @@ document.querySelectorAll("img:not([loading])").forEach(img => img.loading = "la
 // Year in footer
 const yEl = document.querySelector("[data-year]");
 if (yEl) yEl.textContent = String(new Date().getFullYear());
+
+// Initialize Animations
+initScrollReveal(targetElements, defaultProps);
+initTiltAnimation();
