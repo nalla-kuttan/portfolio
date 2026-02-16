@@ -1,22 +1,9 @@
 #contact {
-  background-image: linear-gradient(
-    135deg,
-    $primary-color 0%,
-    $secondary-color 100%
-  );
-  -webkit-clip-path: polygon(0 15vh, 100% 0, 100% 100%, 0 100%);
-  clip-path: polygon(0 15vh, 100% 0, 100% 100%, 0 100%);
-  padding: 15rem 0 10rem 0;
-  margin-top: -10rem;
-  margin-bottom: -1px;
-  color: $dark-blue-text;
-
-  @include respond(tab-land) {
-    padding: 10rem 0;
-    clip-path: none;
-    margin-top: 0;
-    -webkit-clip-path: none;
-  }
+  background-color: $dark-bg-secondary;
+  padding: 10rem 0;
+  text-align: center;
+  color: $text-primary;
+  margin-top: -5rem; // Adjust for overlap if needed, or just 0
 
   .contact-wrapper {
     margin-top: 3.2rem;
@@ -25,15 +12,12 @@
 
     &__text {
       margin-bottom: 2.5rem;
+      font-size: 2.4rem;
+      color: $text-secondary;
     }
 
-    &__text,
-    a {
-      font-size: 2.4rem;
-
-      @include respond(phone) {
-        font-size: 2rem;
-      }
+    .cta-btn {
+      font-size: 2rem;
     }
   }
 }

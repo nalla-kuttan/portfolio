@@ -1,31 +1,53 @@
 #hero {
   min-height: 100vh;
-  height: 100vh;
+  // height: 100vh; // removed fixed height to avoid issues on mobile
   display: flex;
   align-items: center;
   border-bottom: 0px;
-  background: $white-color;
+  background: $dark-bg; // Updated
   font-weight: 400;
-  color: $dark-blue-text;
+  color: $text-primary; // Updated
   padding: 0rem 5.6rem;
   margin-bottom: 0;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
-  z-index: -1;
+  z-index: 1; // Changed from -1 to 1 to be above particles if needed, or keep -1 but ensure particles are -2?
+  // Actually, particles are pseudo elements of default z-index.
+  // Let's keep z-index logic simple.
+  position: relative;
+  overflow: hidden;
 
-  // Set position sticky so the jumbotron stays fixed while you scroll.
-  // position: sticky;
+  // Animated Background Particles
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: $accent-primary;
+    filter: blur(80px);
+    opacity: 0.1;
+    border-radius: 50%;
+    animation: float 10s infinite ease-in-out;
+    z-index: -1;
+  }
 
-  // If you want to set a background image on the hero section, uncomment these with your custom image
+  &::before {
+    top: -50px;
+    left: -50px;
+  }
 
-  /* background: url("/src/assets/[your-image].png");
-  background-position: center;
-  background-size: cover; */
+  &::after {
+    bottom: -50px;
+    right: -50px;
+    animation-delay: 5s;
+    background: $accent-secondary;
+  }
 
   @include respond(phone) {
-    padding: 0rem $default-font-size;
+    padding: 0rem 2rem;
   }
 
   .hero-title {
@@ -33,28 +55,30 @@
     font-weight: 700;
     margin-bottom: 3.2rem;
     text-align: left;
+    color: $text-primary;
 
     @include respond(tab-land) {
       font-size: 4rem;
     }
-    @include respond(tab-port) {
-      font-size: 3.6rem;
-      text-align: center;
-    }
+
     @include respond(phone) {
-      font-size: 3.5rem;
-      line-height: 1.5;
-    }
-    @include respond(phone-xs) {
-      font-size: 2.8rem;
+      font-size: 3.2rem;
+      text-align: center;
     }
   }
 
   .hero-cta {
     display: flex;
+    gap: 2rem;
 
     @include respond(tab-port) {
       justify-content: center;
+    }
+
+    @include respond(phone) {
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
     }
 
     & a {
@@ -64,5 +88,48 @@
         font-size: 2rem;
       }
     }
+  }
+
+  .hero-socials {
+    @include respond(tab-port) {
+      text-align: center;
+      width: 100%;
+      justify-content: center;
+      display: flex;
+    }
+  }
+
+  #typewriter {
+    color: $accent-primary;
+    border-right: 2px solid $accent-secondary;
+    padding-right: 5px;
+
+    &.typing {
+      animation: blink 0.7s infinite;
+    }
+  }
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(30px, 30px);
+  }
+}
+
+@keyframes blink {
+
+  0%,
+  100% {
+    border-color: transparent;
+  }
+
+  50% {
+    border-color: $accent-secondary;
   }
 }

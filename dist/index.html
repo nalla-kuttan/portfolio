@@ -1,1 +1,262 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Ruban Manoj — Portfolio</title><meta name="description" content="Full-stack engineer building fast, accessible web apps."><meta property="og:title" content="Ruban Manoj — Portfolio"><meta property="og:description" content="Projects, experience, and contact."><meta property="og:type" content="website"><meta property="og:image" content="/assets/profile.jpeg"><link rel="canonical" href="https://nalla-kuttan.github.io/portfolio/"><link rel="stylesheet" href="/index.41eb8911.css"></head><body> <a href="#main" class="skip-link">Skip to content</a> <header role="banner"> <nav class="nav" aria-label="Primary"> <div class="container nav__inner"> <a class="brand" href="#home" aria-label="Go to home">R.</a> <ul class="nav__list"> <li><a href="#home" data-link>Home</a></li> <li><a href="#projects" data-link>Projects</a></li> <li><a href="#experience" data-link>Experience</a></li> <li><a href="#contact" data-link>Contact</a></li> <li><a class="btn btn--primary" href="/assets/resume.pdf" target="_blank" rel="noreferrer">Resume</a></li> </ul> </div> </nav> </header> <main id="main" role="main">  <section id="home" class="hero section" aria-labelledby="home-title"> <div class="container grid-2"> <div> <h1 id="home-title">Hey, I’m <span class="brand-color">Ruban</span> — I build fast, accessible web apps.</h1> <p class="muted">Full-stack developer focused on clean UX, performance, and robust DX.</p> <div class="buttons"> <a class="btn btn--primary" href="#projects">View Projects</a> <a class="btn" href="#contact">Contact</a> </div> </div> <div class="hero__visual" role="img" aria-label="Decorative gradient"></div> </div> </section>  <section id="projects" class="section" aria-labelledby="projects-title"> <div class="container"> <h2 id="projects-title">Projects</h2> <div class="filters" role="tablist" aria-label="Project categories"> <button class="active btn" data-filter="All" role="tab" aria-selected="true">All</button> <button class="btn" data-filter="Web" role="tab">Web</button> <button class="btn" data-filter="Backend" role="tab">Backend</button> <button class="btn" data-filter="ML" role="tab">ML</button> </div> <div id="project-grid" class="grid grid--3" data-grid></div> </div> </section>  <section id="experience" class="section" aria-labelledby="exp-title"> <div class="container"> <h2 id="exp-title">Experience</h2> <ol class="timeline"> <li> <strong>Engineer · Novo Nordisk Engineering</strong> <div class="muted">2024—Present</div> <ul> <li>Author URS & commissioning docs for pharma equipment</li> <li>Automate/validate PLC–HMI process controls</li> </ul> </li> </ol> </div> </section>  <section id="contact" class="section" aria-labelledby="contact-title"> <div class="container"> <h2 id="contact-title">Contact</h2> <form action="https://formspree.io/f/your-id" method="post" aria-describedby="contact-help" class="contact"> <p id="contact-help" class="muted">I’ll reply within 24–48 hours.</p> <label>Email <input name="email" type="email" required autocomplete="on"> </label> <label>Message <textarea name="message" rows="5" required></textarea> </label> <button class="btn btn--primary">Send</button> <span id="sent" class="muted" hidden>Thanks! Sent.</span> </form> </div> </section> </main> <footer class="footer" role="contentinfo"> <div class="container"> © <span data-year></span> Ruban Manoj · <a class="btn" href="https://github.com/nalla-kuttan" target="_blank" rel="noreferrer">GitHub</a> </div> </footer>  <script src="/index.b61d07a2.js" defer></script> <script type="module" src="/index.ea3d848a.js" defer></script> </body></html>
+<!DOCTYPE html>
+<html lang="en" class="sr">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/svg+xml" href="/favicon.8dfb5803.svg">
+
+  <title>Ruban Manoj | Developer Portfolio</title>
+  <meta name="keywords" content="Ruban Manoj, Developer, Portfolio, Web Developer, Cloud Enthusiast">
+  <meta name="description" content="Ruban Manoj | Full-stack engineer building fast, accessible, and premium web experiences.">
+
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="Ruban Manoj | Developer Portfolio">
+  <meta property="og:description" content="Full-stack engineer building fast, accessible, and premium web experiences.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="62de82d30d685432">
+  <link rel="canonical" href="69ff97ce379e05de">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/index.4a508c1d.css">
+  <script defer="" src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+
+</head><body>
+  <div id="top"></div>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container navbar__container">
+      <a href="#top" class="navbar__brand">R.</a>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul class="navbar__nav">
+        <li><a href="#top" class="nav-link" aria-current="page">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Work</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+        <li><a href="/assets/resume.pdf" target="_blank" rel="noreferrer" class="btn btn--small">Resume</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="hero">
+    <div class="container">
+      <h1 class="hero-title load-hidden">
+        Hi, I'm <span class="text-color-main">Ruban Manoj</span>
+        <br>
+        <span id="typewriter"></span>
+      </h1>
+      <div class="hero-cta load-hidden">
+        <a rel="noreferrer" class="cta-btn cta-btn--hero" href="#projects">View Work</a>
+        <a rel="noreferrer" class="cta-btn cta-btn--hero" href="#contact">Contact Me</a>
+      </div>
+      <div class="hero-socials load-hidden" style="22f72d30b3731254">
+        <a href="https://github.com/nalla-kuttan" target="_blank" rel="noreferrer" style="adacf1677c9472d5"><i class="fa fa-github"></i></a>
+        <a href="https://linkedin.com/in/rubanpmanoj" target="_blank" rel="noreferrer" style="9cd22abe832f5efc"><i class="fa fa-linkedin"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title load-hidden">About me</h2>
+      <div class="row about-wrapper">
+        <div class="col-md-6 col-sm-12">
+          <div class="about-wrapper__image load-hidden">
+            <img alt="Profile Image" class="img-fluid rounded shadow-lg" height="auto" width="600px" src="/profile.7064521f.jpeg">
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-12">
+          <div class="about-wrapper__info load-hidden">
+            <p class="about-wrapper__info-text">
+              Heyy! I’m Ruban, a recent graduate enthusiastic about creating polished, user-friendly websites.
+              Armed with an Advanced Diploma in Computer Programming and Analysis, I’m diving into the exciting realm of
+              web development, eager to turn concepts into pixel-perfect reality.
+            </p>
+            <p class="about-wrapper__info-text">
+              Proficient in HTML, CSS, and JavaScript, I’m constantly honing my skills and embracing new challenges with
+              a spirit of curiosity. I thrive on crafting intuitive
+              interfaces that blend form with function, aiming to make the web a more delightful place one line of code
+              at a time.
+            </p>
+            <p class="about-wrapper__info-text">
+              Beyond coding, I’m a fervent football enthusiast (not the American kind), lost in a good fantasy book,
+              immersed in epic video game quests, or
+              binge-watching the latest TV series. I love connecting and crafting something extraordinary together!
+            </p>
+            <span class="d-flex mt-3">
+              <a rel="noreferrer" target="_blank" class="cta-btn cta-btn--resume" href="/assets/resume.pdf">
+                View Resume
+              </a>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills">
+    <div class="container">
+      <h2 class="section-title load-hidden">Tech Stack</h2>
+      <div class="skills-grid load-hidden">
+        <div class="skill-badge"><i class="fa fa-html5"></i> HTML</div>
+        <div class="skill-badge"><i class="fa fa-css3"></i> CSS</div>
+        <div class="skill-badge"><i class="fa fa-code"></i> JavaScript</div>
+        <div class="skill-badge"><i class="fa fa-laptop"></i> React</div>
+        <div class="skill-badge"><i class="fa fa-server"></i> Node.js</div>
+        <div class="skill-badge"><i class="fa fa-amazon"></i> AWS</div>
+        <div class="skill-badge"><i class="fa fa-git"></i> Git</div>
+        <div class="skill-badge"><i class="fa fa-database"></i> SQL</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <div class="container">
+      <div class="project-wrapper">
+        <h2 class="section-title dark-blue-text">Projects</h2>
+        <div class="projects-grid">
+
+          <!-- Project 1 -->
+          <div class="project-card load-hidden" data-tilt="">
+            <div class="project-card__content">
+              <h3 class="project-card__title">Carpool Web App</h3>
+              <p class="project-card__desc">
+                The app has a login page for students and staff to track activity,
+                advanced search filters by hobbies, schedules, and majors, and
+                options to post or request trips.
+              </p>
+              <div class="project-card__tags">
+                <span>Web</span><span>Backend</span>
+              </div>
+              <div class="project-card__links">
+                <a href="https://www.youtube.com/watch?v=HMsF1qp5YCs" target="_blank" rel="noreferrer">Demo</a>
+                <a href="https://github.com/nalla-kuttan/Carpooling-App" target="_blank" rel="noreferrer">Code</a>
+              </div>
+            </div>
+            <div class="project-card__image">
+              <img src="/carpool.017fabdc.png" alt="Carpool App">
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div class="project-card load-hidden" data-tilt="">
+            <div class="project-card__content">
+              <h3 class="project-card__title">Fragments Microservice</h3>
+              <p class="project-card__desc">
+                Fragments Microservice will handle small text and image fragments.
+                It supports multiple formats (text, JSON, images) from various sources
+                like IoT devices and mobile apps.
+              </p>
+              <div class="project-card__tags">
+                <span>Microservices</span><span>AWS</span>
+              </div>
+              <div class="project-card__links">
+                <a href="https://github.com/nalla-kuttan/fragments-ui" target="_blank" rel="noreferrer">Frontend</a>
+                <a href="https://github.com/nalla-kuttan/fragments" target="_blank" rel="noreferrer">Backend</a>
+              </div>
+            </div>
+            <div class="project-card__image">
+              <img src="/aws.65783130.png" alt="Fragments">
+            </div>
+          </div>
+
+          <!-- Project 3 -->
+          <div class="project-card load-hidden" data-tilt="">
+            <div class="project-card__content">
+              <h3 class="project-card__title">Sound Kit</h3>
+              <p class="project-card__desc">
+                A web app where each button plays a different sound.
+                Choose between Guitar and Drum kits.
+              </p>
+              <div class="project-card__tags">
+                <span>JS</span><span>Audio</span>
+              </div>
+              <div class="project-card__links">
+                <a href="https://nalla-kuttan.github.io/SoundKit/" target="_blank" rel="noreferrer">Live</a>
+                <a href="https://github.com/nalla-kuttan/SoundKit" target="_blank" rel="noreferrer">Code</a>
+              </div>
+            </div>
+            <div class="project-card__image">
+              <img src="/sound.bea2d1ea.png" alt="Sound Kit">
+            </div>
+          </div>
+
+          <!-- Project 4 -->
+          <div class="project-card load-hidden" data-tilt="">
+            <div class="project-card__content">
+              <h3 class="project-card__title">Dice Game</h3>
+              <p class="project-card__desc">
+                A web app that simulates a dice throw, randomizing each
+                roll to determine the winner.
+              </p>
+              <div class="project-card__tags">
+                <span>JS</span><span>Game</span>
+              </div>
+              <div class="project-card__links">
+                <a href="https://nalla-kuttan.github.io/DiceGame/" target="_blank" rel="noreferrer">Live</a>
+                <a href="https://github.com/nalla-kuttan/DiceGame" target="_blank" rel="noreferrer">Code</a>
+              </div>
+            </div>
+            <div class="project-card__image">
+              <img src="/dice.188d6fb7.png" alt="Dice Game">
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <div class="container">
+      <h2 class="section-title">Contact</h2>
+      <div class="contact-wrapper load-hidden">
+        <p class="contact-wrapper__text">Let’s Talk</p>
+        <a rel="noreferrer" target="_blank" class="cta-btn cta-btn--resume" href="mailto:rubanpmanoj@gmail.com">Email
+          Me</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="footer navbar-static-bottom">
+    <div class="container">
+      <a rel="noreferrer" href="#top" class="back-to-top">
+        <i class="fa fa-angle-up fa-2x" aria-hidden="true"></i>
+      </a>
+      <div class="social-links">
+        <a rel="noreferrer" href="https://linkedin.com/in/rubanpmanoj" target="_blank">
+          <i class="fa fa-linkedin fa-inverse"></i>
+        </a>
+        <a rel="noreferrer" href="https://github.com/nalla-kuttan" target="_blank">
+          <i class="fa fa-github fa-inverse"></i>
+        </a>
+      </div>
+
+      <hr>
+
+      <p class="footer__text">
+        © <span data-year=""></span> -
+        <a rel="noreferrer" href="https://github.com/nalla-kuttan" target="_blank">Ruban Manoj</a>
+      </p>
+
+    </div>
+  </footer>
+
+  <script src="8aa144a84d1ceb97" defer=""></script>
+  <script src="/index.975ef6c8.js" defer=""></script>
+</body>
+
+</html>

@@ -1,0 +1,170 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 5rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    background: transparent;
+
+    @include respond(phone) {
+        padding: 2rem;
+    }
+
+    &--scrolled {
+        background: rgba($dark-bg, 0.85);
+        backdrop-filter: blur(15px);
+        box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
+        padding: 1.5rem 5rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+
+        @include respond(phone) {
+            padding: 1.5rem 2rem;
+        }
+    }
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    &__brand {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 3rem;
+        font-weight: 700;
+        text-decoration: none;
+        background: $accent-gradient;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: transparent;
+        position: relative;
+        transition: transform 0.3s ease;
+
+        &:hover {
+            transform: scale(1.05);
+            text-shadow: 0 0 20px rgba($accent-primary, 0.4);
+        }
+    }
+
+    &__nav {
+        display: flex;
+        list-style: none;
+        align-items: center;
+        gap: 3.5rem;
+        margin: 0;
+
+        @include respond(phone) {
+            display: none; // TODO: Mobile Menu implementation
+            // For now, hiding on mobile to prevent breakage until JS toggle is fully verified or CSS mobile menu is added.
+            // Actually, let's add basic mobile styles here to be safe.
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            flex-direction: column;
+            background: rgba($dark-bg, 0.95);
+            backdrop-filter: blur(20px);
+            padding: 2rem 0;
+            gap: 2rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            transform: translateY(-100%);
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s ease;
+            z-index: -1;
+
+            &.active {
+                display: flex; // Override display none
+                transform: translateY(0);
+                opacity: 1;
+                pointer-events: all;
+            }
+        }
+
+        li {
+            margin: 0;
+        }
+
+        .nav-link {
+            font-size: 1.6rem;
+            color: $text-secondary; // Use distinct variable if created, else literal or existing
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+            transition: color 0.3s ease;
+
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: -5px;
+                left: 0;
+                width: 0;
+                height: 2px;
+                background: $accent-gradient;
+                transition: width 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+                border-radius: 2px;
+            }
+
+            &:hover {
+                color: $text-primary;
+
+                &::after {
+                    width: 100%;
+                }
+            }
+        }
+
+        .btn--small {
+            margin-left: 1rem;
+
+            @include respond(phone) {
+                margin-left: 0;
+            }
+        }
+    }
+}
+
+// Hamburger Menu for Mobile
+.hamburger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    z-index: 1001;
+
+    @include respond(phone) {
+        display: flex;
+    }
+
+    span {
+        display: block;
+        width: 100%;
+        height: 3px;
+        background: $text-primary;
+        border-radius: 3px;
+        transition: all 0.3s ease;
+    }
+
+    &.active {
+        span:nth-child(1) {
+            transform: translateY(9px) rotate(45deg);
+        }
+
+        span:nth-child(2) {
+            opacity: 0;
+        }
+
+        span:nth-child(3) {
+            transform: translateY(-9px) rotate(-45deg);
+        }
+    }
+}

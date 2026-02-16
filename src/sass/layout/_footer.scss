@@ -1,37 +1,32 @@
 .footer {
-  background-color: $dark-grey;
-  color: $white-color;
+  background-color: $dark-bg;
+  color: $text-secondary;
   padding: 4.8rem 0;
-
-  @include respond(phone) {
-    border: 0px;
-  }
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
 
   &__text {
-    color: darken($dark-blue-text, 50%);
+    color: $text-secondary;
     font-size: 1.3rem;
+    opacity: 0.7;
 
     a {
-      color: darken($dark-blue-text, 50%);
+      color: $text-primary;
       font-size: 1.3rem;
       transition: all 0.4s;
       display: inline-block;
-      background-color: $dark-grey;
+      text-decoration: none;
 
-      &:hover,
-      &:active {
-        color: $primary-color;
-        -webkit-box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
-        box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+      &:hover {
+        color: $accent-primary;
       }
     }
   }
 
   & hr {
-    margin: 1rem auto;
+    margin: 2rem auto;
     border: 0;
     width: 50%;
-    border-top: 2px solid grey;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
   }
 }
 
@@ -44,25 +39,35 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    color: $dark-blue-text;
+    color: $text-primary;
     font-size: 3rem;
     width: 5rem;
     height: 5rem;
-    margin: $default-font-size $default-font-size;
+    margin: 1rem;
     transition: all 0.2s ease-in;
 
+    i {
+      transition: all 0.2s ease;
+    }
+
     &:hover {
-      transform: translateY(-2px);
+      transform: translateY(-3px);
+
+      i {
+        color: $accent-primary;
+        text-shadow: 0 0 10px rgba($accent-primary, 0.5);
+      }
     }
   }
 }
 
 .back-to-top i {
-  color: $dark-blue-text;
-  margin: 1rem 0 $default-font-size;
+  color: $text-secondary;
+  margin: 1rem 0;
   transition: all 0.2s ease-in;
 
   &:hover {
+    color: $accent-primary;
     transform: translateY(-2px);
   }
 }

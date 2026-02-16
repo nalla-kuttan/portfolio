@@ -1,72 +1,109 @@
 import initScrollReveal from "./scripts/scrollReveal";
-import initTiltAnimation from "./scripts/tiltAnimation";
+import initTiltEffect from "./scripts/tiltAnimation";
 import { targetElements, defaultProps } from "./data/scrollRevealConfig";
 
-// Sticky header hide/show
-const header = document.querySelector("header");
-let lastY = 0;
-window.addEventListener("scroll", () => {
-  const y = window.scrollY || 0;
-  header.classList.toggle("is-hidden", y > lastY && y > 80);
-  lastY = y;
-}, { passive: true });
+// Initialize Animations
+initScrollReveal(targetElements, defaultProps);
+initTiltEffect();
 
-// Active link highlighting
-const navLinks = document.querySelectorAll("nav a[href^='#']");
-const sections = Array.from(document.querySelectorAll("section[id]"));
-function setActive(hash) {
-  navLinks.forEach(a => a.setAttribute("aria-current", a.getAttribute("href") === hash ? "true" : "false"));
+// Typewriter Effect
+const typedTextSpan = document.querySelector("#typewriter");
+const textArray = ["Web Developer", "Cloud Enthusiast", "Creative Coder"];
+const typingDelay = 100;
+const erasingDelay = 50;
+const newTextDelay = 2000;
+let textArrayIndex = 0;
+let charIndex = 0;
+
+function type() {
+  if (typedTextSpan && charIndex < textArray[textArrayIndex].length) {
+    if (!typedTextSpan.classList.contains("typing")) typedTextSpan.classList.add("typing");
+    typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex);
+    charIndex++;
+    setTimeout(type, typingDelay);
+  } else if (typedTextSpan) {
+    typedTextSpan.classList.remove("typing");
+    setTimeout(erase, newTextDelay);
+  }
 }
-const io = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      setActive(`#${e.target.id}`);
+
+function erase() {
+  if (typedTextSpan && charIndex > 0) {
+    if (!typedTextSpan.classList.contains("typing")) typedTextSpan.classList.add("typing");
+    typedTextSpan.textContent = textArray[textArrayIndex].substring(0, charIndex - 1);
+    charIndex--;
+    setTimeout(erase, erasingDelay);
+  } else if (typedTextSpan) {
+    typedTextSpan.classList.remove("typing");
+    textArrayIndex++;
+    if (textArrayIndex >= textArray.length) textArrayIndex = 0;
+    setTimeout(type, typingDelay + 1100);
+  }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  if (typedTextSpan && textArray.length) setTimeout(type, newTextDelay + 250);
+});
+
+// Sticky Navbar + Active Link Highlighting
+const navbar = document.querySelector(".navbar");
+const navLinks = document.querySelectorAll(".nav-link");
+const sections = document.querySelectorAll("section[id]");
+
+window.addEventListener("scroll", () => {
+  // Sticky Logic
+  if (navbar) {
+    if (window.scrollY > 50) {
+      navbar.classList.add("navbar--scrolled");
+    } else {
+      navbar.classList.remove("navbar--scrolled");
+    }
+  }
+
+  // Active Link Highlighting using Intersection Logic (simplified scroll check here)
+  let current = "";
+  sections.forEach((section) => {
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.clientHeight;
+    if (pageYOffset >= sectionTop - 150) {
+      current = section.getAttribute("id");
     }
   });
-}, { rootMargin: "-40% 0px -50% 0px", threshold: [0.25, 0.6, 1] });
-sections.forEach(s => io.observe(s));
 
-// Projects grid + filters
-const GRID = document.querySelector("#project-grid");
-const filters = document.querySelectorAll(".filters [data-filter]");
-const all = (window.__PROJECTS__ || []);
-
-function render(list) {
-  if (!GRID) return;
-  GRID.innerHTML = list.map((p, i) => `
-    <a class="card" href="${p.url}" target="_blank" rel="noreferrer" style="transition-delay:${i * 30}ms">
-      <strong>${p.name}</strong>
-      <p class="muted" style="margin-top:8px">${p.desc}</p>
-      <div class="tags">${p.tags.map(t => `<span>${t}</span>`).join("")}</div>
-    </a>
-  `).join("");
-}
-render(all);
-
-filters.forEach(btn => btn.addEventListener("click", () => {
-  filters.forEach(b => b.classList.remove("active"));
-  btn.classList.add("active");
-  const cat = btn.dataset.filter;
-  const next = cat === "All" ? all : all.filter(p => p.tags.includes(cat));
-  render(next);
-}));
-
-// Contact feedback
-const form = document.querySelector('form[action^="https://formspree.io"]');
-if (form) {
-  form.addEventListener("submit", () => {
-    const sent = document.getElementById("sent");
-    if (sent) sent.hidden = false;
+  navLinks.forEach((a) => {
+    a.classList.remove("active");
+    if (a.getAttribute("href") === `#${current}`) {
+      a.classList.add("active");
+      a.setAttribute("aria-current", "page");
+    } else {
+      a.removeAttribute("aria-current");
+    }
   });
-}
+});
 
-// Lazy-load any non-lazy images
-document.querySelectorAll("img:not([loading])").forEach(img => img.loading = "lazy");
+// Mobile Menu
+const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector(".navbar__nav");
+
+if (hamburger && navMenu) {
+  hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    navMenu.classList.toggle("active");
+
+    // Prevent background scrolling when menu is open
+    document.body.style.overflow = navMenu.classList.contains("active") ? "hidden" : "auto";
+  });
+
+  document.querySelectorAll(".nav-link").forEach(n => n.addEventListener("click", () => {
+    hamburger.classList.remove("active");
+    navMenu.classList.remove("active");
+    document.body.style.overflow = "auto";
+  }));
+}
 
 // Year in footer
 const yEl = document.querySelector("[data-year]");
 if (yEl) yEl.textContent = String(new Date().getFullYear());
 
-// Initialize Animations
-initScrollReveal(targetElements, defaultProps);
-initTiltAnimation();
+// Lazy-load images
+document.querySelectorAll("img:not([loading])").forEach(img => img.loading = "lazy");

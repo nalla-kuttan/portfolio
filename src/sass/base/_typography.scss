@@ -1,24 +1,25 @@
-@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700");
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap');
 
-h1 {
+body {
+  font-family: 'Inter', sans-serif;
+  color: $text-secondary;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Space Grotesk', sans-serif;
+  color: $text-primary;
   font-weight: 700;
 }
 
-p,
 a {
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: $default-font-size;
-}
-
-a,
-a:link,
-a:hover,
-a:visited,
-a:active {
   text-decoration: none;
-}
-
-a:hover {
   transition: all 0.3s ease-in-out;
 }
 
@@ -26,28 +27,22 @@ a:hover {
   margin: 0px;
   margin-bottom: 4.5rem;
   font-size: $big-font-size;
-  font-weight: bold;
+  font-weight: 700;
   text-transform: uppercase;
+  background: $accent-gradient;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 
   @include respond(phone) {
     font-size: 2.8rem;
   }
 }
 
-.dark-blue-text {
-  color: $dark-blue-text !important;
-}
-
 .text-color-main {
-  @include supportColorForIE11();
-
-  // Responsive text purple style
-  @include respond(phone) {
-    background-image: none;
-    -webkit-text-fill-color: $secondary-color;
-  }
-
-  &:hover {
-    transform: translateX(2px);
-  }
+  background: $accent-gradient;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
 }

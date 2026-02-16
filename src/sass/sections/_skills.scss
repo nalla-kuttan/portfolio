@@ -1,0 +1,45 @@
+#skills {
+    background-color: $dark-bg-secondary;
+    margin-top: -10rem;
+    padding-top: 15rem;
+
+    .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 3rem;
+        margin-top: 4rem;
+    }
+
+    .skill-badge {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: $glass-bg;
+        backdrop-filter: blur($glass-blur);
+        border: 1px solid $glass-border;
+        padding: 2rem;
+        border-radius: 12px;
+        font-size: 1.6rem;
+        font-weight: 500;
+        color: $text-secondary;
+        transition: all 0.3s ease;
+        cursor: default;
+
+        i {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            background: $accent-gradient;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        &:hover {
+            transform: translateY(-5px);
+            box-shadow: $glow-shadow;
+            border-color: $accent-primary;
+            color: $text-primary;
+        }
+    }
+}

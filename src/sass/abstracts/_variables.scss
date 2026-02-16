@@ -1,10 +1,20 @@
 // COLORS
-$primary-color: #c7b198;
-$secondary-color: #dfd3c3;
+// Colors - Dark Theme
+$dark-bg: #0a0a1a;
+$dark-bg-secondary: #111133;
+$text-primary: #f0f0f0;
+$text-secondary: #a0a0b8;
+$accent-gradient: linear-gradient(135deg, #00d4ff 0%, #7b2ff7 100%);
+$accent-primary: #00d4ff;
+$accent-secondary: #7b2ff7;
 
-$white-color: #f0ece2;
+// Glassmorphism
+$glass-bg: rgba(255, 255, 255, 0.05);
+$glass-border: rgba(255, 255, 255, 0.1);
+$glass-blur: 10px;
 
-$dark-grey: #4e4545;
+// Shadows
+$glow-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
 $light-grey: #d2d2d2;
 
 $dark-blue-text: #596e79; // For Headings

@@ -1,28 +1,47 @@
 html {
   font-size: 62.5%;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
 
   &.sr .load-hidden {
     visibility: hidden;
   }
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
 body {
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Inter', sans-serif;
   text-align: center;
-  scroll-behavior: smooth;
+  background-color: $dark-bg;
+  color: $text-primary;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
 }
 
 /* Scrollbar */
 ::-webkit-scrollbar {
   width: 10px;
-  height: 10px;
 }
+
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: $dark-bg-secondary;
 }
+
 ::-webkit-scrollbar-thumb {
-  background: $light-grey;
+  background: $accent-primary;
+  border-radius: 5px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
-  background: $primary-color;
+  background: $accent-secondary;
 }
