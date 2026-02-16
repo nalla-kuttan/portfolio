@@ -64,4 +64,27 @@ export const targetElements = [
       origin: "bottom",
     },
   },
+  {
+    element: ".skills-grid",
+    animation: {
+      delay: 500,
+      origin: "bottom",
+    },
+  },
+  {
+    element: ".skill-badge",
+    animation: {
+      delay: 600,
+      origin: "bottom",
+      interval: 100 // Stagger effect
+    }
+  },
+  {
+    element: ".project-card",
+    animation: {
+      delay: 500,
+      origin: "bottom",
+      interval: 200 // Stagger effect for projects
+    }
+  }
 ];
